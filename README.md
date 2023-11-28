@@ -1,1 +1,122 @@
-# Sql-sorgulari
+use NORTHWND
+---------------------------------Employees---------------------------------
+--1--Calisanlarin sayisini listeleme
+--2--Calisanlarin adini ve soyadini getirme
+--2.1--Ya da isimleri birlestirerek getirme
+--3--TitleOfCourtesy'i 'Dr.' olanlarin adi ve soyadini getirme
+--4--TitleOfCourtesy'i 'Dr.','Ms.','Mrs.' olanlarin adi ve soyadini getirme
+--4.1--Ya da in kullanarak birlestirip getirme
+--5--TitleOfCourtesy'i 'Mr.' olanlari getirme
+--6--TitleOfCourtesy'i 'Mr.','Ms.','Mrs.' olan kac kisi vardir 
+--7--kac farkli sehirde calisan var
+--8--Dogum tarihi 1960-05-29 dan buyuk olan calisanlarin adini soyadini ve dogum tarihini getirme
+--9--Address'in icinde house gecen calisanlarin adini soyadini ve adresini getirme
+--10--Extension kolonu 3 haneli olanlarin adini soyadini ve extension kismini getirme
+--10.1--Ya da farkli bir yoldan
+--11--Calisanlarin yaslarini bulup kucukten buyuge siralama
+--12--En genc calisanin adini,soyadini ve yasini getirme
+--13--calisanlarin ise kac yasinda basladiklarini bulup kucukten buyuge siralama
+--14--En genc ise baslayan calisanin adini,soyadini ve yasini getirme
+--15--Region kismi null olan calisanlari listeleme
+--16--Region kolonunu null olmayan calisanlari listeleme
+--17--Calisanlarin adlarini A'dan Z'ye siralama
+--18--Calisanlarin adlarini Z'den A'ya siralama 
+--19--Calisanlarin adlarini A'dan Z'ye soyadlarini Z'den A'ya siralama
+--20--Sirket calisanlarinin yaslarinin ortalamasini bulma
+--21--'Michael' ya da 'Laura' ile ayni sehirde yasayan calisanlar
+--22--Calisanlarin adlarini buyultulmus sekilde getirme
+--23--Calisanlarin adlarini kucultulmus sekilde getirme
+--24--TitleOfCourtesy'i 'Mr.' olanin yerine 'Erkek','Ms.' ve 'Mrs.' olanin yerine 'Kadin' ,'Dr.' olanin yerine 'Doktor' koy
+---------------------------------Customers---------------------------------
+select * from Customers
+--1--Musterilerin sirket adi 'A' ile baslayan musterileri getirme
+--2--Fax ve region kismi null olan musterileri getirme
+--3--Fax ya da region kismi null olan musterileri getirme
+--4--CustomerID'si 'AA' ile biten musterileri getirme
+--5--Musterilerin ulkelere gore sayilarini veren sorgu
+--6--'Brazil' de bulunan musterilerin sirket adi temsilci adi, adres, sehir ve ulke bilgilerini getirme 
+--7--'London' ve 'Paris' de bulunan musterileri listeleme
+--8--Musterilerin icinde en uzun CompanyName'li musteriyi getirme
+--9--Musterilerin icinde en uzun isimli musterinin harf sayisi
+--10--'Brazil'de olmayan musterileri getirme
+--11--Hem 'México D.F.' bulunanlar hem de ContactTitle bilgisi 'owner' olan musterileri getirme
+--12--Musterilerden ContactName'i ve CompanyName'i 'A' harfi ile baslayanlari getirme 
+--13--Hangi ulkeden kac adet var
+--14--Hangi ulkeden kac adet var 5'den buyuk olanlari getir
+---------------------------------product---------------------------------
+select * from products
+--1--Urunlerin kdv haric fiyatlarini productname ile birlikte getirme ve ucrete gore siralama
+--2--Urunlerin kdv dahil fiyatlarini productname ile birlikte getirme ve ucrete gore siralama
+--3--Kdv degeri 10 Tl'den az olanlari getirme ve ucrete gore siralama
+--4--En pahali 5 urunu urun adi ve kdv dahil fiyatiyla getirme
+--******************
+--5--En ucuz 5 urunun ortalama fiyati nedir
+--6--Urun adlarini urun adi buyuk bir sekilde ProductID ile bitlikte getir ve ProductID'ye gore kucukten buyuge sirala
+--7--Stogu olmayan urunleri siralama
+--8--Stogu olmayan urunlerin sayisini getirme
+--9--Stok adedi 20 ile 50 arasindaki urunleri getir ve UnitsInStock'a gore sirala
+--9.1--Ya da farkli bir yol ile yapma
+--10--Stok adedi en pahali urunu urun ismiyle getir 
+--10.1--Ya da farkli bir yol ile yapma	
+--10.2--Ya da farkli bir yol ile yapma
+--11--Kac cesit urun var
+--12--En pahali urunun adini getirme
+--12.1--Ya da farkli bir yol ile yapma
+--13--100 Tl'den buyuk urunleri ProductName ve UnitPrice ile gosterme
+--14--UnitsInStock degeri 15'in altinda olan urunlerin adi fiyati ve stok bilgileri
+--15--Ortalamanin altinda bir fiyata sahip urunlerin adi ve fiyatini getirme ve UnitPrice'a gore siralama
+--16--Satisi yapilmayan urun listesi (Discontinued degeri ve UnitsInStock degeri sifir olmayan)
+--17--50 Tl ile 100 Tl arasinda bulunan tum urunlerin adlari ve fiyatlarini getirme
+--17.1--Ya da farkli bir yol ile
+--18--En pahali urunun stok bilgisini getirme
+--19--UnitPrice degeri 30 dan buyuk olanlarin ProductName bilgilerini getir
+--20--Stok bilgisi 0 olan degerlerin yerine 'Stokta yok' yaz ve ProductName, UnitPrice ve yeni UnitsInStock bilgilerini getir
+--21--Stok bilgisi 0 olan degerlerin yerine 'Stokta yok' yaz ve ProductName getir UnitPrice degerini 50 den yuksek al ve getir 
+--ve yeni UnitsInStock bilgilerini getir
+--22--Urunlerin ucretlerini 'CategoryID'ye gore ortalamasini alma
+
+---------------------------------Orders---------------------------------
+select * from orders 
+--1--'ALFKI' CustomerID'sine sahip musterinin siparis sayisi nedir
+--2--Kac farkli ulkeye siparis yapidiginin sayisini getirme
+--3--Siparis tarihleri '1996-07-01' ile '1996-12-31' tarihleri arasindaki siparislerin OrderID,CustomerID ve OrderDate ini getirme
+--3.1--Ya da farkli bir yol ile 
+--4--Urunlerin OrderDate,RequiredDate bilgilerine 1 ay ekle ve ShippedDate bilgisine 10 gun ekle
+--5--Urunlerin OrderDate tarihlerinin yilini ve RequiredDate tarihlerindeki gunu getirme
+--5.1--Ya da farkli bir yol ile
+--6--Urunleri shipname'ine gore Freight toplamini alip toplam degeri 300'den buyuk olanlari getir
+--7--Calisanlarin kac adet urun sattiginin sayisini EmployeeID'si ile getir ve
+--80'den fazla satana 'Yuksek' 80'den az satana 'Dusuk' yaz
+---------------------------------Order Details---------------------------------
+select * from [Order Details]
+--1--Hangi siparis bana ne kadar kazandirmis (UnitPrice*Quantity*(1-Discount)
+--2--Hangi urunlerden toplam kac adet alinmis
+--3--1000 adetten fazla satilan urunler
+---------------------------------Karisik Kullanim---------------------------------
+--******************
+--1--Her kategoriden kac tane urun var (products,categories)
+--2--Calisanlar ne kadarlik satis(unitprice*Quantity) yapmislar (orders,employees,[Order Details])
+--3--50'den fazla satisi olan calisanlari bulma (orders,employees)
+--4--Hangi musteri hic siparis vermemis(customers,alt fonksiyon orders)
+--5--Hangi urun hangi kategoridedir (products,categories)
+--6--Hangi calisan hangi bolgeden sorumlu(Territories,EmployeeTerritories)
+--7--Hangi tedarikci hangi urunu sagliyor (Products,Suppliers)
+--8--Beverages kategorisine ait urunlerin listesi (categories,products)
+--Birlestirmeden alt sinif ile
+--9--Urunlerin karsisina kategori getirme (categories,products)
+--Birlestirmeden alt sinif ile
+--10--CategoryID'si 1 olan urunde kac urun oldugunu getirme (Products,Categories)
+--11--Hangi urunden toplam kac adet alindigini getirme ([Order Details],Products)
+--12--Hangi kategoride(CategoryName) toplam kac adet urun bulundugunu getirme (Categories,Products)
+--13--1000 Adetten fazla satilan urunleri toplam satilan urunlere gore siralama (Products,[Order Details])
+--14--Hangi urun hangi kategoride ve SupplierID'ye gore siralama (Products,Categories)
+--15--Hangi tedarikci hangi urunu sagladigi bilgisini getirme (Products,Suppliers)
+--16--Hangi siparis hangi kargo sirketi ile ne zaman gonderildigi bilgisi (orders,Shippers)
+--17--Hangi siparisi hangi musteri verirdiginin bilgisi (Customers,Orders)
+--18--Hangi calisan, toplam kac siparis aldiginin bilgisi (Orders,Employees)
+--19--En fazla siparisi alan calisani getirme (Orders,Employees)
+--20--Hangi siparisi, hangi calisan, hangi musteri verdiginin bilgisi (Orders,Customers)
+--21--Hangi urun, hangi kategoride bulunmaktadir ve bu urunu kimin tedarik ettigi bilgisi
+--22--Hangi siparisi hangi musteri vermis, hangi calisan almis, hangi tarihte, hangi kargo sirketi tarafindan gonderilmis hangi urunden kac adet alinmis
+--hangi fiyattan alinmis, urun hangi kategorideymis bu urunu hangi tedarikci saglamis
+--23--Hangi calisan simdiye kadar toplam kac siparis aldiginin bilgisi
